@@ -65,24 +65,24 @@ connectDB.then((client) => {
     }
   })
 
-  app.get('/reset', async (req, res) => {
-    try {
-      await db.collection('guest').deleteMany({})
-      await db.collection('guest_post').deleteMany({})
-      await db.collection('member').deleteMany({})
-      await db.collection('notification_post').deleteMany({})
-      await db.collection('notification_user').deleteMany({})
-      await db.collection('team').deleteMany({})
-      await db.collection('bulletin_post').deleteMany({})
-      await db.collection('bulletin').deleteMany({})
-      await db.collection('bulletin_comment').deleteMany({})
-      res.status(200).send({ success: true, message: '리셋' })
-      return
-    } catch (err) {
-      console.log('Router [reset] catch')
-      console.log(err)
-    }
-  })
+  // app.get('/reset', async (req, res) => {
+  //   try {
+  //     await db.collection('guest').deleteMany({})
+  //     await db.collection('guest_post').deleteMany({})
+  //     await db.collection('member').deleteMany({})
+  //     await db.collection('notification_post').deleteMany({})
+  //     await db.collection('notification_user').deleteMany({})
+  //     await db.collection('team').deleteMany({})
+  //     await db.collection('bulletin_post').deleteMany({})
+  //     await db.collection('bulletin').deleteMany({})
+  //     await db.collection('bulletin_comment').deleteMany({})
+  //     res.status(200).send({ success: true, message: '리셋' })
+  //     return
+  //   } catch (err) {
+  //     console.log('Router [reset] catch')
+  //     console.log(err)
+  //   }
+  // })
 
 
 }).catch((err) => {
